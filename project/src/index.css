@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baumans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=B612:ital,wght@0,400;0,700;1,400;1,700&family=Baumans&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-white text-indigo-primary;
+    font-family: 'B612';
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply px-4 py-2 text-sm font-medium hover:text-indigo-secondary transition-colors;
+  }
+  
+  .nav-link.active {
+    @apply text-indigo-secondary;
+  }
+
+  .btn-primary {
+    @apply bg-indigo-primary text-white px-6 py-2 rounded-md hover:bg-indigo-dark transition-colors;
+  }
+
+  .btn-secondary {
+    @apply bg-indigo-secondary text-white px-6 py-2 rounded-md hover:brightness-110 transition-colors;
+  }
+
+  .section-title {
+    @apply text-2xl font-bold text-indigo-primary mb-6;
+  }
+
+  .card {
+    @apply bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow;
+  }
+}
+
+.plane-animation {
+  animation: fly 2s ease-in-out;
+}
+
+@keyframes fly {
+  0% {
+    transform: translateX(0) translateY(0) rotate(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100vw) translateY(-100vh) rotate(45deg);
+    opacity: 0;
+  }
+}
